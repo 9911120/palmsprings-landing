@@ -14,6 +14,9 @@ const header_inside = css`
     display:flex;
     justify-content:space-between;
     align-items:center;
+    @media (max-width:575px){
+        padding:0 20px;
+    }
 `;
 const logo = css`
     font-size:20px;
@@ -87,7 +90,19 @@ const example_image = css`
     width:92%;
     max-width:1000px;
     border-radius:20px;
-    filter:drop-shadow(0 0 20px rgba(0,0,0,0.08));
+    filter:drop-shadow(0 0 20px rgba(0,0,0,0.16));
+    @media (max-width:575px){
+        display:none;
+    }
+`;
+const example_phone_image = css`
+    margin-top:60px;
+    width:90%;
+    filter:drop-shadow(0 0 20px rgba(0,0,0,0.16));
+    border-radius:20px;
+    @media (min-width:576px){
+        display:none;
+    }
 `;
 const footer = css`
     width:100%;
@@ -133,6 +148,7 @@ function App() {
                     팀 블로그 만들기
                 </button>
                 <img src="/images/example.png" alt="palmspring example" css={example_image} />
+                <img src="/images/example_phone.png" alt="palmspring example" css={example_phone_image} />
             </main>
             <footer css={footer}>
                 서울특별시 마포구 마포대로 122 프론트원 18층<br/><br/>
