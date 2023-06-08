@@ -3,7 +3,15 @@ import { css } from '@emotion/react';
 
 const header = css`
     width:100%;
-    background:var(--gray100);
+    border-bottom: 1px solid #EEE;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    background: transparent;
+    backdrop-filter: blur(18px);
+    z-index: 10;
 `;
 const header_inside = css`
     width:100%;
@@ -20,7 +28,7 @@ const header_inside = css`
 `;
 const logo = css`
     font-size:20px;
-    color:#FFF;
+    color:var(--gray100);
     display:flex;
     align-items:center;
     & > img {
@@ -32,7 +40,8 @@ const logo = css`
     }
 `;
 const header_button = css`
-    background:#FFF;
+    background:var(--gray100);
+    color:#FFF;
     border-radius:12px;
     padding:10px 20px;
     font-weight:600;
@@ -45,9 +54,9 @@ const main = css`
     flex-direction:column;
     align-items:center;
     text-align:center;
-    margin-top:110px;
+    margin-top:160px;
     @media (max-width:575px){
-        margin-top:90px;
+        margin-top:140px;
     }
 `;
 const title = css`
@@ -139,9 +148,9 @@ function App() {
                 <h1 css={title}>세상에서 가장 심플한<br/>공동집필 <span style={{color:'var(--green100)'}}>팀 블로그</span>를 소개합니다.</h1>
                 <div css={description}>
                     <span style={{fontFamily:'Tossface'}}>✅</span> 가장 심플하고 깔끔한 디자인<br/>
-                    <span style={{fontFamily:'Tossface'}}>✅</span> 팀원 공동 집필 지원<br/>
-                    <span style={{fontFamily:'Tossface'}}>✅</span> 마크다운 문법 작성 & 불러오기 지원<br/>
-                    <span style={{fontFamily:'Tossface'}}>✅</span> 블로그 관련 다양한 통계 데이터 수집<br/>
+                    <span style={{fontFamily:'Tossface'}}>✅</span> 팀원들 추가하여 공동 집필 가능<br/>
+                    <span style={{fontFamily:'Tossface'}}>✅</span> 마크다운 작성 & 파일 불러오기<br/>
+                    <span style={{fontFamily:'Tossface'}}>✅</span> 유입/유지 관련 통계 데이터 제공<br/>
                     <span style={{fontFamily:'Tossface'}}>✅</span> 네이버/구글 검색엔진 최적화
                 </div>
                 <button css={main_button}>
