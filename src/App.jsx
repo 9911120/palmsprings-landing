@@ -1,0 +1,145 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+
+const header = css`
+    width:100%;
+    background:var(--gray100);
+`;
+const header_inside = css`
+    width:100%;
+    max-width:1200px;
+    height:60px;
+    margin:0 auto;
+    padding:0 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+`;
+const logo = css`
+    font-size:20px;
+    color:#FFF;
+    display:flex;
+    align-items:center;
+    & > img {
+        height:24px;
+        filter: invert(58%) sepia(14%) saturate(3901%) hue-rotate(118deg) brightness(101%) contrast(60%);
+    }
+    & > span {
+        font-family:'Black Han Sans',sans-serif;
+    }
+`;
+const header_button = css`
+    background:#FFF;
+    border-radius:12px;
+    padding:10px 20px;
+    font-weight:600;
+    @media (max-width:1200px){
+        display:none;
+    }
+`;
+const main = css`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    margin-top:110px;
+    @media (max-width:575px){
+        margin-top:90px;
+    }
+`;
+const title = css`
+    font-size:50px;
+    font-weight:700;
+    line-height:1.4;
+    word-break:keep-all;
+    @media (max-width:575px){
+        font-size:40px;
+    }
+`;
+const description = css`
+    text-align:left;
+    font-size:22px;
+    line-height:1.6;
+    margin-top:36px;
+    @media (max-width:575px){
+        font-size:18px;
+    }
+`;
+const main_button = css`
+    margin-top:48px;
+    border-radius:20px;
+    background:var(--gray100);
+    padding:20px 30px;
+    font-weight:600;
+    font-size:24px;
+    color:#FFF;
+    transition:.3s;
+    &:hover{
+        filter:drop-shadow(0 0 10px rgba(0,0,0,0.16));
+    }
+    @media (max-width:575px){
+        font-size:20px;
+        padding:18px 26px;
+    }
+`;
+const example_image = css`
+    margin-top:60px;
+    width:92%;
+    max-width:1000px;
+    border-radius:20px;
+    filter:drop-shadow(0 0 20px rgba(0,0,0,0.08));
+`;
+const footer = css`
+    width:100%;
+    margin-top:100px;
+    background:#f2f4f6;
+    padding:90px 0;
+    text-align:center;
+    color:#868B94;
+    font-size:14px;
+    @media (max-width:575px){
+        padding:60px 0;
+        font-size:12px;
+    }
+`;
+
+function App() {
+    return (
+        <>
+            <header css={header}>
+                <div css={header_inside}>
+                    <div css={logo}>
+                        <img src="/images/palmtree_icon.png" alt="palmtree" />
+                        <span style={{color:'var(--green100)',marginLeft:'4px'}}>palm</span>
+                        <span>springs</span>
+                    </div>
+                    <div>
+                        <button css={header_button}>
+                            팀 블로그 만들기
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <main css={main}>
+                <h1 css={title}>세상에서 가장 심플한<br/>공동집필 <span style={{color:'var(--green100)'}}>팀 블로그</span>를 소개합니다.</h1>
+                <div css={description}>
+                    <span style={{fontFamily:'Tossface'}}>✅</span> 가장 심플하고 깔끔한 디자인<br/>
+                    <span style={{fontFamily:'Tossface'}}>✅</span> 팀원 공동 집필 지원<br/>
+                    <span style={{fontFamily:'Tossface'}}>✅</span> 마크다운 문법 작성 & 불러오기 지원<br/>
+                    <span style={{fontFamily:'Tossface'}}>✅</span> 블로그 관련 다양한 통계 데이터 수집<br/>
+                    <span style={{fontFamily:'Tossface'}}>✅</span> 네이버/구글 검색엔진 최적화
+                </div>
+                <button css={main_button}>
+                    팀 블로그 만들기
+                </button>
+                <img src="/images/example.png" alt="palmspring example" css={example_image} />
+            </main>
+            <footer css={footer}>
+                서울특별시 마포구 마포대로 122 프론트원 18층<br/><br/>
+                <span style={{fontWeight:'bold'}}>© 팜스프링 Palmsprings</span>
+            </footer>
+        </>
+    );
+}
+
+export default App;
