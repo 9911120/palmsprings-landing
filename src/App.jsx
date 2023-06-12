@@ -138,9 +138,11 @@ function App() {
                         <span>springs</span>
                     </div>
                     <div>
-                        <button css={header_button}>
-                            팀 블로그 만들기
-                        </button>
+                        <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
+                            <button css={header_button}>
+                                팀 블로그 만들기
+                            </button>
+                        </a>
                     </div>
                 </div>
             </header>
@@ -148,14 +150,16 @@ function App() {
                 <h1 css={title}>세상에서 가장 심플한<br/>공동집필 <span style={{color:'var(--green100)'}}>팀 블로그</span>를 소개합니다.</h1>
                 <div css={description}>
                     <span style={{fontFamily:'Tossface'}}>✅</span> 가장 심플하고 깔끔한 디자인<br/>
-                    <span style={{fontFamily:'Tossface'}}>✅</span> 팀원들 추가하여 공동 집필 가능<br/>
+                    <span style={{fontFamily:'Tossface'}}>✅</span> 팀원들을 추가하여 공동 집필<br/>
                     <span style={{fontFamily:'Tossface'}}>✅</span> 마크다운 작성 & 파일 불러오기<br/>
-                    <span style={{fontFamily:'Tossface'}}>✅</span> 유입/유지 관련 통계 데이터 제공<br/>
+                    <span style={{fontFamily:'Tossface'}}>✅</span> 뉴스레터 구독자 관리 및 발송<br/>
                     <span style={{fontFamily:'Tossface'}}>✅</span> 네이버/구글 검색엔진 최적화
                 </div>
-                <button css={main_button}>
-                    팀 블로그 만들기
-                </button>
+                <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
+                    <button css={main_button}>
+                        팀 블로그 만들기
+                    </button>
+                </a>
                 <img src="/images/example.png" alt="palmspring example" css={example_image} />
                 <img src="/images/example_phone.png" alt="palmspring example" css={example_phone_image} />
             </main>
