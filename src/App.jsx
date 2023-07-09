@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { useEffect, useState } from 'react';
 
 const header = css`
     width:100%;
@@ -33,10 +34,6 @@ const logo = css`
     align-items:center;
     & > img {
         height:24px;
-        filter: invert(58%) sepia(14%) saturate(3901%) hue-rotate(118deg) brightness(101%) contrast(60%);
-    }
-    & > span {
-        font-family:'Black Han Sans',sans-serif;
     }
 `;
 const header_button = css`
@@ -60,22 +57,20 @@ const main = css`
     }
 `;
 const title = css`
-    font-size:50px;
+    margin:20px 0 0 0;
+    font-size:60px;
     font-weight:700;
-    line-height:1.4;
+    line-height:1.3;
+    letter-spacing:-0.8px;
     word-break:keep-all;
     @media (max-width:575px){
         font-size:40px;
     }
 `;
-const description = css`
-    text-align:left;
-    font-size:22px;
-    line-height:1.6;
-    margin-top:36px;
-    @media (max-width:575px){
-        font-size:18px;
-    }
+const subtitle = css`
+    font-weight:500;
+    font-size:24px;
+    color:var(--gray200);
 `;
 const main_button = css`
     margin-top:48px;
@@ -104,15 +99,6 @@ const example_image = css`
         display:none;
     }
 `;
-const example_phone_image = css`
-    margin-top:60px;
-    width:90%;
-    filter:drop-shadow(0 0 20px rgba(0,0,0,0.16));
-    border-radius:20px;
-    @media (min-width:576px){
-        display:none;
-    }
-`;
 const footer = css`
     width:100%;
     margin-top:100px;
@@ -128,14 +114,42 @@ const footer = css`
 `;
 
 function App() {
+
+    const [remainingSeconds, setRemainingSeconds] = useState(0);
+
+    useEffect(() => {
+        const targetDate = new Date('2023-07-10T18:00:00');
+        const now = new Date();
+        const difference = Math.floor((targetDate - now) / 1000); // 밀리초를 초로 변환
+        if (difference > 0) {
+            setRemainingSeconds(difference);
+            const intervalId = setInterval(() => {
+            setRemainingSeconds((prevSeconds) => prevSeconds - 1);
+            }, 1000);
+            return () => {
+                clearInterval(intervalId);
+            };
+        }
+    }, []);
+
+    const formatTime = (seconds) => {
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const remainingSeconds = seconds % 60;
+
+        return `${hours.toString().padStart(2, '0')}:${minutes
+        .toString()
+        .padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    };
+    
+
+
     return (
         <>
-            <header css={header}>
+            {/* <header css={header}>
                 <div css={header_inside}>
                     <div css={logo}>
-                        <img src="/images/palmtree_icon.png" alt="palmtree" />
-                        <span style={{color:'var(--green100)',marginLeft:'4px'}}>palm</span>
-                        <span>springs</span>
+                        <img src="/images/palmspring_new_logo.png" alt="palmtree" />
                     </div>
                     <div>
                         <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
@@ -147,26 +161,25 @@ function App() {
                 </div>
             </header>
             <main css={main}>
-                <h1 css={title}>세상에서 가장 심플한<br/>공동집필 <span style={{color:'var(--green100)'}}>팀 블로그</span>를 소개합니다.</h1>
-                <div css={description}>
-                    <span style={{fontFamily:'Tossface'}}>✅</span> 가장 심플하고 깔끔한 디자인<br/>
-                    <span style={{fontFamily:'Tossface'}}>✅</span> 팀원들을 추가하여 공동 집필<br/>
-                    <span style={{fontFamily:'Tossface'}}>✅</span> 마크다운 작성 & 파일 불러오기<br/>
-                    <span style={{fontFamily:'Tossface'}}>✅</span> 뉴스레터 구독자 관리 및 발송<br/>
-                    <span style={{fontFamily:'Tossface'}}>✅</span> 네이버/구글 검색엔진 최적화
-                </div>
+                <h3 css={subtitle}>성장하는 조직을 위한 팀 블로그 빌더</h3>
+                <h1 css={title}>우리 팀 이야기를<br/>세상에 전달하는 방법</h1>
                 <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
                     <button css={main_button}>
                         팀 블로그 만들기
                     </button>
                 </a>
-                <img src="/images/example.png" alt="palmspring example" css={example_image} />
-                <img src="/images/example_phone.png" alt="palmspring example" css={example_phone_image} />
+                <div css={[example_image]} />
             </main>
             <footer css={footer}>
                 서울특별시 마포구 마포대로 122 프론트원 18층<br/><br/>
-                <span style={{fontWeight:'bold'}}>© 팜스프링 Palmsprings</span>
-            </footer>
+                <span style={{fontWeight:'bold'}}>© 팜스프링 Palmspring</span>
+            </footer> */}
+            <div css={css`margin-top:140px;font-size:68px;font-weight:700;text-align:center;`}>
+                {formatTime(remainingSeconds)}
+            </div>
+            <div css={css`text-align:center;`}>
+                <img css={css`margin-top:40px;height:24px;`} src="/images/palmspring_new_logo.png" alt="palmtree" />
+            </div>
         </>
     );
 }

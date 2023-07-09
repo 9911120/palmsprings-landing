@@ -108,9 +108,11 @@ const reset = css`
     }
     body{
         font-size:16px;
-        --gray100:#1A1E27;
+        --gray100:#212529; //1A1E27
+        --gray200:#ADB5BD;
         --green100:#3EB489;
         color:var(--gray100);
+        letter-spacing:-0.5px;
     }
     button{
         cursor:pointer;
