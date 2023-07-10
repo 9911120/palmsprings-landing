@@ -112,7 +112,7 @@ const reset = css`
         --gray200:#ADB5BD;
         --green100:#3EB489;
         color:var(--gray100);
-        letter-spacing:-0.5px;
+        letter-spacing:-0.8px;
     }
     button{
         cursor:pointer;
@@ -125,7 +125,22 @@ const reset = css`
     a{
         text-decoration:none;
         color:inherit;
-        text-decoration:underline;
+    }
+    @keyframes rotating {
+        from {
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        to {
+            -ms-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
     }
 `;
 
