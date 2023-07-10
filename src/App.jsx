@@ -29,6 +29,16 @@ const header_inside = css`
         padding:0 20px;
     }
 `;
+const gradient_background = css`
+    position:absolute;
+    top:0;
+    background-image:url('/images/home_bg_gradient.png');
+    width:100%;
+    height:734px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index:-10;
+`;
 const logo = css`
     font-size:20px;
     color:var(--gray100);
@@ -61,6 +71,7 @@ const main = css`
     @media (max-width:575px){
         margin-top:140px;
     }
+    overflow-x:hidden;
 `;
 const title = css`
     margin:20px 0 0 0;
@@ -77,6 +88,9 @@ const subtitle = css`
     font-weight:500;
     font-size:32px;
     color:#ADB5BD;
+    @media (max-width:575px){
+        font-size:20px;
+    }
 `;
 const main_button = css`
     margin-top:48px;
@@ -97,13 +111,11 @@ const main_button = css`
     }
 `;
 const example_image = css`
-    margin-top:60px;
-    width:92%;
-    max-width:1000px;
-    border-radius:20px;
-    filter:drop-shadow(0 0 20px rgba(0,0,0,0.16));
+    width:1002px;
+    margin-top:80px;
     @media (max-width:575px){
-        display:none;
+        margin-top:40px;
+        width:92%;
     }
 `;
 const footer = css`
@@ -123,7 +135,31 @@ const zoomin_when_hover = css`
     cursor:default;
     transition: all 0.2s linear;
     &:hover{transform:scale(1.08);
-`
+`;
+const link_container = css`
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    &>a{
+        padding:10px 16px;
+        font-size:24px;
+        border-radius:16px;
+        box-shadow:0 0 16px 0 rgba(0,0,0,0.08);
+        opacity:0.5;
+        transition: all 0.1s linear;
+        &:hover{
+            opacity:1;
+        }
+    }
+    @media (max-width:575px){
+        gap:10px;
+        &>a{
+            padding:10px 16px;
+            font-size:18px;
+            border-radius:16px;
+        }
+    }
+`;
 
 function App() {
 
@@ -150,7 +186,7 @@ function App() {
 
     return (
         <div>
-            <div css={css`position:absolute;top:0;background-image:url('/images/home_bg_gradient.png');width:100%;height:734px;background-repeat: no-repeat;background-size: cover;z-index:-10;`}/>
+            <div css={gradient_background}/>
             <header data-aos="fade-up" data-aos-duration="800" data-aos-delay="2000" css={header(position)}>
                 <div css={header_inside}>
                     <div css={logo}>
@@ -168,7 +204,7 @@ function App() {
             <main css={main}>
                 <h3 data-aos="fade-up" data-aos-duration="800" css={subtitle}>성장하는 조직을 위한 팀 블로그 빌더</h3>
                 <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" css={title}>우리 팀 이야기를<br/>세상에 전달하는 방법</h1>
-                <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" css={css`width:1002px;height:668px;margin-top:80px;background-image:url('/images/landing-main-image.png');background-repeat:no-repeat;background-size: cover;`}></div>
+                <img data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" src="/images/landing-main-image.png" alt="example image" css={example_image} />
                 <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
                     <button css={main_button}>
                         팀 블로그 만들기
@@ -176,14 +212,14 @@ function App() {
                 </a>
                 <div css={css`margin-top:220px;`}>
                     <div data-aos="fade-up">
-                        <div css={css`display:flex;justify-content:center;gap:20px;&>a{padding:10px 16px;font-size:24px;border-radius:16px;box-shadow:0 0 16px 0 rgba(0,0,0,0.08);}`}>
-                            <a href="https://naver.worksmobile.com/blog/" target="_blank" rel="noopener noreferrer" css={css`color:#008000;background:#EBF5EB;border:1px solid #BCDEBC;opacity:0.5;transition: all 0.1s linear;&:hover{opacity:1;}`}>네이버</a>
-                            <a href="https://blog.kakaopay.com/" target="_blank" rel="noopener noreferrer" css={css`color:#A8761A;background:#FFFBEB;border:1px solid #FFC700;opacity:0.5;transition: all 0.1s linear;&:hover{opacity:1;}`}>카카오</a>
-                            <a href="https://engineering.linecorp.com/ko/blog" target="_blank" rel="noopener noreferrer" css={css`color:#008000;background:#EBF5EB;border:1px solid #BCDEBC;opacity:0.5;transition: all 0.1s linear;&:hover{opacity:1;}`}>라인</a>
-                            <a href="https://story.baemin.com/" target="_blank" rel="noopener noreferrer" css={css`color:#007C6D;background:#E6F2F1;border:1px solid #8AC3BC;opacity:0.5;transition: all 0.1s linear;&:hover{opacity:1;}`}>배달의민족</a>
-                            <a href="https://about.daangn.com/blog/" target="_blank" rel="noopener noreferrer" css={css`color:#CD4A00;background:#FBEDE6;border:1px solid #EDBCA1;opacity:0.5;transition: all 0.1s linear;&:hover{opacity:1;}`}>당근마켓</a>
-                            <a href="https://toss.tech/" target="_blank" rel="noopener noreferrer" css={css`color:#0000A1;background:#E6E6F6;border:1px solid #B8B8E5;opacity:0.5;transition: all 0.1s linear;&:hover{opacity:1;}`}>토스</a>
-                            <a href="https://sendbird.com/ko/blog" target="_blank" rel="noopener noreferrer" css={css`color:#420084;background:#EDE6F3;border:1px solid #CBB8DD;opacity:0.5;transition: all 0.1s linear;&:hover{opacity:1;}`}>센드버드</a>
+                        <div css={link_container}>
+                            <a href="https://naver.worksmobile.com/blog/" target="_blank" rel="noopener noreferrer" css={css`color:#008000;background:#EBF5EB;border:1px solid #BCDEBC;`}>네이버</a>
+                            <a href="https://blog.kakaopay.com/" target="_blank" rel="noopener noreferrer" css={css`color:#A8761A;background:#FFFBEB;border:1px solid #FFC700;`}>카카오</a>
+                            <a href="https://engineering.linecorp.com/ko/blog" target="_blank" rel="noopener noreferrer" css={css`color:#008000;background:#EBF5EB;border:1px solid #BCDEBC;`}>라인</a>
+                            <a href="https://story.baemin.com/" target="_blank" rel="noopener noreferrer" css={css`color:#007C6D;background:#E6F2F1;border:1px solid #8AC3BC;`}>배달의민족</a>
+                            <a href="https://about.daangn.com/blog/" target="_blank" rel="noopener noreferrer" css={css`color:#CD4A00;background:#FBEDE6;border:1px solid #EDBCA1;`}>당근마켓</a>
+                            <a href="https://toss.tech/" target="_blank" rel="noopener noreferrer" css={css`color:#0000A1;background:#E6E6F6;border:1px solid #B8B8E5;`}>토스</a>
+                            <a href="https://sendbird.com/ko/blog" target="_blank" rel="noopener noreferrer" css={css`color:#420084;background:#EDE6F3;border:1px solid #CBB8DD;`}>센드버드</a>
                         </div>
                         <h1 css={css`font-size:52px;font-weight:bold;margin-top:60px;`}>요즘 잘 나가는 팀들이 자체 블로그를 쓰는 이유</h1>
                     </div>
