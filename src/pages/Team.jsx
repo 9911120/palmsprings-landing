@@ -8,16 +8,16 @@ import Footer from '../components/Footer';
 const ourBelovedPM = [
     {
         name:'김대덕',
-        position:'PM',
-        desc:'한줄 소개가 여기 들어갑니다.',
+        position:'Team Leader',
+        desc:'세상에 도움이 되는 삶을 살고 싶어요',
         url:[
-            'https://instagram.com/_9911120',
-            'https://github.com/9911120',
-            'https://kimdaeduk.oopy.io'
+            'https://kimdaeduk.oopy.io',
+            'https://dannykim.tistory.com/',
+            'https://disquiet.io/@_9911120'
         ]
     },{
         name:'양정윤',
-        position:'PM',
+        position:'Project Manager',
         desc:'알은 새의 세계이다. 누구든지 태어나려고 하는 자는 하나의 세계를 파괴해야 한다.',
         url:[
             'https://instagram.com/zzang_yoon'
@@ -36,11 +36,13 @@ const ourBelovedDesigner = [
         name:'김성은',
         position:'Designer',
         desc:'디자이너입니다.',
-        url:[]
+        url:[
+            "https://instagram.com/sungeunarchive_"
+        ]
     },{
         name:'송승훈',
         position:'Designer',
-        desc:'팜스 프로덕 디쟌임니다',
+        desc:'기술과 디자인의 조화로 윤택한 삶을 만들고 싶습니다.',
         url:[
             'https://big-camel-a35.notion.site/Leo-Song-2023-29feffece20f4d1592b6630070c4adee?pvs=4'
         ]
@@ -57,7 +59,7 @@ const ourBelovedFE = [
     },{
         name:'오형근',
         position:'FE Engineer',
-        desc:'개발자 꿈나무입니다!',
+        desc:'개발자 꿈나무입니다! 제가 궁금하시다면 깃헙을 봐주세요.',
         url:[
             'https://github.com/Geun-Oh'
         ]
@@ -72,7 +74,7 @@ const ourBelovedFE = [
     },{
         name:'장명지',
         position:'FE Engineer',
-        desc:'🐶발도 좋아도 개발도 좋아합니다.',
+        desc:'🐶발도 좋아하고 개발도 좋아합니다.',
         url:[
             'https://www.instagram.com/_myundi/',
             'https://github.com/Dangpy'
@@ -92,7 +94,7 @@ const ourBelovedServer = [
     },{
         name:'장유진',
         position:'Server Engineer',
-        desc:'성장 중인 코린이 개발자 장유진 입니다. 저는.. 더보기',
+        desc:'성장중인 개발자입니다. 긴장해라 네카라쿠배. 그리고 저는.. 더보기',
         url:[
             'https://instagram.com/eu_jinchin'
         ]
