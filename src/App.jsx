@@ -283,7 +283,7 @@ function App() {
                 <h3 data-aos="fade-up" data-aos-duration="800" css={subtitle}>성장하는 조직을 위한 팀 블로그 빌더</h3>
                 <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" css={title}>우리 팀 이야기를<br/>세상에 전달하는 방법</h1>
                 <img data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" src="/images/landing-main-image.png" alt="example image" css={example_image} />
-                <a  data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
+                <a data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
                     <button css={main_button}>
                         팀 블로그 만들기
                     </button>
@@ -294,8 +294,8 @@ function App() {
                             <a href="https://naver.worksmobile.com/blog/" target="_blank" rel="noopener noreferrer" css={css`color:#008000;background:#EBF5EB;border:1px solid #BCDEBC;`}>네이버</a>
                             <a href="https://blog.kakaopay.com/" target="_blank" rel="noopener noreferrer" css={css`color:#A8761A;background:#FFFBEB;border:1px solid #FFC700;`}>카카오</a>
                             <a href="https://engineering.linecorp.com/ko/blog" target="_blank" rel="noopener noreferrer" css={css`color:#008000;background:#EBF5EB;border:1px solid #BCDEBC;`}>라인</a>
-                            <a href="https://story.baemin.com/" target="_blank" rel="noopener noreferrer" css={css`color:#007C6D;background:#E6F2F1;border:1px solid #8AC3BC;`}>배달의민족</a>
                             <a href="https://about.daangn.com/blog/" target="_blank" rel="noopener noreferrer" css={css`color:#CD4A00;background:#FBEDE6;border:1px solid #EDBCA1;`}>당근마켓</a>
+                            <a href="https://story.baemin.com/" target="_blank" rel="noopener noreferrer" css={css`color:#007C6D;background:#E6F2F1;border:1px solid #8AC3BC;`}>배달의민족</a>
                             <a href="https://toss.tech/" target="_blank" rel="noopener noreferrer" css={css`color:#0000A1;background:#E6E6F6;border:1px solid #B8B8E5;`}>토스</a>
                             <a href="https://sendbird.com/ko/blog" target="_blank" rel="noopener noreferrer" css={css`color:#420084;background:#EDE6F3;border:1px solid #CBB8DD;`}>센드버드</a>
                         </div>
@@ -332,7 +332,7 @@ function App() {
                     <div css={[css`background-image:url('/images/custom-domain-graphic.png');`,feature_image]}></div>
                     <div>
                         <div css={[css`width:520px;@media(max-width:575px){font-size:26px;}`,feature_title]}>우리 팀만의 커스텀 도메인을 통해 완전히 독립적인 블로그로 꾸며보세요.</div>
-                        <div css={css`margin-top:20px;font-size:24px;`}></div>
+                        {/* <div css={css`margin-top:20px;font-size:24px;`}></div> */}
                     </div>
                 </div>
                 <div css={css`margin-top:280px;@media (max-width:575px){margin-top:180px;}`} data-aos="fade-up">
