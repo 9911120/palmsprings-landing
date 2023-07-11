@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -25,6 +25,7 @@ const main = css`
     align-items:center;
     text-align:center;
     margin:160px 0 280px 0;
+    padding:0 16px;
     @media (max-width:575px){
         margin-top:140px;
     }
@@ -71,7 +72,7 @@ const example_image = css`
     margin-top:80px;
     @media (max-width:575px){
         margin-top:40px;
-        width:92%;
+        width:100%;
     }
 `;
 const feature_image_container = css`
@@ -100,7 +101,7 @@ const feature_title = css`
     line-height:140%;
     @media (max-width:575px){
         width:100%;
-        font-size:28px;
+        font-size:26px;
     }
 `;
 const link_container = css`
@@ -111,7 +112,7 @@ const link_container = css`
     }
     @media(max-width:575px){
         &>h1{
-            width:90%;
+            width:100%;
             font-size:36px;
             margin:40px auto 0 auto;
         }
@@ -151,7 +152,7 @@ const feature_image = css`
     background-size: cover;
     @media (max-width:575px){
         position:relative;
-        width:93%;
+        width:100%;
         height:62%;
         padding-bottom:62%;
         margin:0 auto;
@@ -172,9 +173,9 @@ const why_they_use_container = css`
     @media (max-width:575px){
         flex-direction:column;
         &>div{
-            width:90%;
+            width:100%;
             margin:0 auto;
-            padding:60px 0;
+            padding:52px 0;
         }
     }
 `;
@@ -196,7 +197,7 @@ const Home=()=>{
                 <h3 data-aos="fade-up" data-aos-duration="800" css={subtitle}>성장하는 조직을 위한 팀 블로그 빌더</h3>
                 <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" css={title}>우리 팀 이야기를<br/>세상에 전달하는 방법</h1>
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" css={css`display:flex;flex-direction:column;align-items:center;`}>
-                    <img src="/images/landing-main-image.png" alt="example image" css={example_image}/>
+                    <img src="/images/landing-main-image.png" alt="example landing main" css={example_image}/>
                     <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
                         <button css={main_button}>
                             팀 블로그 만들기
@@ -246,7 +247,7 @@ const Home=()=>{
                 <div css={[css`margin-top:140px;`,feature_image_container]} data-aos="fade-up">
                     <div css={[css`background-image:url('/images/custom-domain-graphic.png');`,feature_image]}></div>
                     <div>
-                        <div css={[css`width:520px;@media(max-width:575px){font-size:26px;}`,feature_title]}>우리 팀만의 커스텀 도메인을 통해 완전히 독립적인 블로그로 꾸며보세요.</div>
+                        <div css={[css`width:520px;@media(max-width:575px){font-size:26px;}`,feature_title]}>우리 팀만의 커스텀 도메인을 통해 독립적인 블로그로 꾸며보세요.</div>
                         {/* <div css={css`margin-top:20px;font-size:24px;`}></div> */}
                     </div>
                 </div>
