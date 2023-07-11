@@ -112,7 +112,7 @@ const reset = css`
         --gray200:#ADB5BD;
         --green100:#3EB489;
         color:var(--gray100);
-        letter-spacing:-0.8px;
+        letter-spacing:-0.2px;
         word-break: keep-all;
     }
     button{

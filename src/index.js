@@ -5,12 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Global } from '@emotion/react';
 import reset from './styles/reset';
+import { BrowserRouter } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />
-        <Global styles={reset}/>
+        <BrowserRouter>
+            <ScrollToTop/>
+            <App />
+            <Global styles={reset}/>
+        </BrowserRouter>
     </React.StrictMode>
 );
 
