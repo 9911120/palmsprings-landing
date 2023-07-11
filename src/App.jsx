@@ -38,6 +38,9 @@ const gradient_background = css`
     background-repeat: no-repeat;
     background-size: cover;
     z-index:-10;
+    @media (max-width:575px){
+        display:none;
+    };
 `;
 const logo = css`
     font-size:20px;
@@ -71,7 +74,6 @@ const main = css`
     @media (max-width:575px){
         margin-top:140px;
     }
-    overflow-x:hidden;
 `;
 const title = css`
     margin:20px 0 0 0;
@@ -127,16 +129,55 @@ const footer = css`
     color:#868B94;
     font-size:14px;
     @media (max-width:575px){
+        margin-top:200px;
         padding:60px 0;
         font-size:12px;
     }
 `;
-const zoomin_when_hover = css`
+const feature_image_container = css`
     cursor:default;
     transition: all 0.2s linear;
-    &:hover{transform:scale(1.08);
+    &:hover{transform:scale(1.08);}
+    display:flex;
+    align-items:center;
+    gap:48px;
+    flex-wrap:wrap;
+    &>div:nth-of-type(2){
+        text-align:left;
+    }
+    @media (max-width:575px){
+        flex-direction:column-reverse;
+        gap:10px;
+        &>div:nth-of-type(2){
+            text-align:center !important;
+        }
+    }
+`;
+const feature_title = css`
+    width:500px;
+    font-size:36px;
+    font-weight:700;
+    line-height:140%;
+    @media (max-width:575px){
+        width:100%;
+        font-size:28px;
+    }
 `;
 const link_container = css`
+    &>h1{
+        font-size:52px;
+        font-weight:bold;
+        margin:60px 0 0 0;
+    }
+    @media(max-width:575px){
+        &>h1{
+            width:90%;
+            font-size:36px;
+            margin:40px auto 0 auto;
+        }
+    }
+`;
+const link_wrapper = css`
     display:flex;
     justify-content:center;
     gap:20px;
@@ -152,11 +193,48 @@ const link_container = css`
         }
     }
     @media (max-width:575px){
+        width:100%;
+        flex-wrap:wrap;
         gap:10px;
         &>a{
             padding:10px 16px;
             font-size:18px;
             border-radius:16px;
+        }
+    }
+`;
+const feature_image = css`
+    width:480px;
+    height:320px;
+    border-radius:24px;
+    background-repeat:no-repeat;
+    background-size: cover;
+    @media (max-width:575px){
+        position:relative;
+        width:93%;
+        height:62%;
+        padding-bottom:62%;
+        margin:0 auto;
+    }
+`;
+const why_they_use_container = css`
+    margin-top:80px;
+    display:flex;
+    justify-content:center;
+    gap:32px;
+    &>div{
+        width:440px;
+        border-radius:24px;
+        box-shadow:0 0 16px 0 rgba(0,0,0,0.08);
+        padding:76px 0;
+        text-align:center;
+    }
+    @media (max-width:575px){
+        flex-direction:column;
+        &>div{
+            width:90%;
+            margin:0 auto;
+            padding:60px 0;
         }
     }
 `;
@@ -185,7 +263,7 @@ function App() {
   
 
     return (
-        <div>
+        <div css={css`width:100%;`}>
             <div css={gradient_background}/>
             <header data-aos="fade-up" data-aos-duration="800" data-aos-delay="2000" css={header(position)}>
                 <div css={header_inside}>
@@ -205,14 +283,14 @@ function App() {
                 <h3 data-aos="fade-up" data-aos-duration="800" css={subtitle}>성장하는 조직을 위한 팀 블로그 빌더</h3>
                 <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" css={title}>우리 팀 이야기를<br/>세상에 전달하는 방법</h1>
                 <img data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" src="/images/landing-main-image.png" alt="example image" css={example_image} />
-                <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
+                <a  data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
                     <button css={main_button}>
                         팀 블로그 만들기
                     </button>
                 </a>
                 <div css={css`margin-top:220px;`}>
-                    <div data-aos="fade-up">
-                        <div css={link_container}>
+                    <div css={link_container} data-aos="fade-up">
+                        <div css={link_wrapper}>
                             <a href="https://naver.worksmobile.com/blog/" target="_blank" rel="noopener noreferrer" css={css`color:#008000;background:#EBF5EB;border:1px solid #BCDEBC;`}>네이버</a>
                             <a href="https://blog.kakaopay.com/" target="_blank" rel="noopener noreferrer" css={css`color:#A8761A;background:#FFFBEB;border:1px solid #FFC700;`}>카카오</a>
                             <a href="https://engineering.linecorp.com/ko/blog" target="_blank" rel="noopener noreferrer" css={css`color:#008000;background:#EBF5EB;border:1px solid #BCDEBC;`}>라인</a>
@@ -221,9 +299,9 @@ function App() {
                             <a href="https://toss.tech/" target="_blank" rel="noopener noreferrer" css={css`color:#0000A1;background:#E6E6F6;border:1px solid #B8B8E5;`}>토스</a>
                             <a href="https://sendbird.com/ko/blog" target="_blank" rel="noopener noreferrer" css={css`color:#420084;background:#EDE6F3;border:1px solid #CBB8DD;`}>센드버드</a>
                         </div>
-                        <h1 css={css`font-size:52px;font-weight:bold;margin-top:60px;`}>요즘 잘 나가는 팀들이 자체 블로그를 쓰는 이유</h1>
+                        <h1>요즘 잘 나가는 팀들이 자체 블로그를 쓰는 이유</h1>
                     </div>
-                    <div css={css`margin-top:80px;display:flex;justify-content:center;gap:32px;&>div{width:440px;border-radius:24px;box-shadow:0 0 16px 0 rgba(0,0,0,0.08);padding:76px 0;text-align:center;}`} data-aos="fade-up">
+                    <div css={why_they_use_container} data-aos="fade-up">
                         <div css={css`transition: all 0.1s linear;background:#FFF;cursor:default;&:hover{transform:scale(1.05);&>div:nth-of-type(2){color:var(--green100);}&>div:nth-of-type(3){color:#000;}}`}>
                             <div css={css`color:#868E96;font-size:44px;font-weight:700;`}>Acquisition</div>
                             <div css={css`margin-top:16px;font-size:92px;font-weight:700;transition: all 0.1s linear;`}>+55%</div>
@@ -236,34 +314,28 @@ function App() {
                         </div>
                     </div>
                 </div>
-                <div css={[css`margin-top:220px;`,zoomin_when_hover]} data-aos="fade-up">
-                    <div css={css`display:flex;align-items:center;gap:48px;`}>
-                        <div css={css`width:480px;height:320px;border-radius:24px;color:#868E96;background-image:url('/images/blog-graphic.png');background-repeat:no-repeat;background-size: cover;`}></div>
-                        <div css={css`text-align:left;`}>
-                            <div css={css`font-size:36px;font-weight:700;line-height:140%;`}>군더더기 없이 심플한 블로그에<br/>팀원들과 함께 기록을 남겨보세요.</div>
-                            <div css={css`margin-top:20px;font-size:24px;`}></div>
-                        </div>
+                <div css={[css`margin-top:220px;@media(max-width:575px){margin-top:180px;}`,feature_image_container]} data-aos="fade-up">
+                    <div css={[css`background-image:url('/images/blog-graphic.png');`,feature_image]}></div>
+                    <div>
+                        <div css={feature_title}>군더더기 없이 심플한 블로그에 팀원들과 함께 기록을 남겨보세요.</div>
+                        <div css={css`margin-top:20px;font-size:24px;`}></div>
                     </div>
                 </div>
-                <div css={[css`margin-top:140px;`,zoomin_when_hover]} data-aos="fade-up">
-                    <div css={css`display:flex;align-items:center;gap:48px;flex-direction:row-reverse;`}>
-                        <div css={css`width:480px;height:320px;border-radius:24px;color:#868E96;background-image:url('/images/editor-graphic.png');background-repeat:no-repeat;background-size: cover;`}></div>
-                        <div css={css`text-align:right;`}>
-                            <div css={css`font-size:36px;font-weight:700;line-height:140%;`}>노션처럼 쉽고 강력한 에디터로<br/>검색 엔진 최적화까지 누려보세요.</div>
-                            <div css={css`margin-top:20px;font-size:24px;`}></div>
-                        </div>
+                <div css={[feature_image_container,css`margin-top:140px;flex-direction:row-reverse;`]} data-aos="fade-up">
+                    <div css={[css`background-image:url('/images/editor-graphic.png');`,feature_image]}></div>
+                    <div css={css`text-align:right;@media(max-width:575px){text-align:center;width:94%;margin:0 auto;}`}>
+                        <div css={[css`width:480px;`,feature_title]}>노션처럼 쉽고 강력한 에디터로 검색 엔진 최적화까지 누려보세요.</div>
+                        <div css={css`margin-top:20px;font-size:24px;`}></div>
                     </div>
                 </div>
-                <div css={[css`margin-top:140px;`,zoomin_when_hover]} data-aos="fade-up">
-                    <div css={css`display:flex;align-items:center;gap:48px;`}>
-                        <div css={css`width:480px;height:320px;border-radius:24px;color:#868E96;background-image:url('/images/custom-domain-graphic.png');background-repeat:no-repeat;background-size: cover;`}></div>
-                        <div css={css`text-align:left;`}>
-                            <div css={css`font-size:36px;font-weight:700;line-height:140%;`}>우리 팀만의 커스텀 도메인을 통해<br/>완전히 독립적인 블로그로 꾸며보세요.</div>
-                            <div css={css`margin-top:20px;font-size:24px;`}></div>
-                        </div>
+                <div css={[css`margin-top:140px;`,feature_image_container]} data-aos="fade-up">
+                    <div css={[css`background-image:url('/images/custom-domain-graphic.png');`,feature_image]}></div>
+                    <div>
+                        <div css={[css`width:520px;@media(max-width:575px){font-size:26px;}`,feature_title]}>우리 팀만의 커스텀 도메인을 통해 완전히 독립적인 블로그로 꾸며보세요.</div>
+                        <div css={css`margin-top:20px;font-size:24px;`}></div>
                     </div>
                 </div>
-                <div css={css`margin-top:280px;`} data-aos="fade-up">
+                <div css={css`margin-top:280px;@media (max-width:575px){margin-top:180px;}`} data-aos="fade-up">
                     <h1 css={[title,css`font-size:68px;`]}>이제, 우리 팀 이야기를 세상에 알려보세요.</h1>
                     <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
                         <button css={main_button}>
@@ -274,7 +346,7 @@ function App() {
             </main>
             <footer css={footer}>
                 서울특별시 마포구 마포대로 122 프론트원 18층<br/><br/>
-                <span style={{fontWeight:'bold'}}>© 팜스프링 Palmspring</span>
+                <span css={css`font-weight:600;`}>© 팜스프링 Palmspring</span>
             </footer>
         </div>
     );
