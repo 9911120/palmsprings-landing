@@ -251,6 +251,13 @@ const Home=()=>{
                         {/* <div css={css`margin-top:20px;font-size:24px;`}></div> */}
                     </div>
                 </div>
+                <div css={[feature_image_container,css`margin-top:140px;flex-direction:row-reverse;`]} data-aos="fade-up">
+                    <div css={[css`background-image:url('/images/news-letter-graphic.png');`,feature_image]}></div>
+                    <div>
+                        <div css={[css`width:520px;@media(max-width:575px){font-size:26px;}`,feature_title]}>자체 뉴스레터 관리 기능을 통해 가장 최신의 소식을 전해주세요.</div>
+                        {/* <div css={css`margin-top:20px;font-size:24px;`}></div> */}
+                    </div>
+                </div>
                 <div css={css`margin-top:280px;@media (max-width:575px){margin-top:180px;}`} data-aos="fade-up">
                     <h1 css={[title,css`font-size:64px;`]}>이제, 우리 팀 이야기를 세상에 알려보세요.</h1>
                     <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
