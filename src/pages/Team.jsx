@@ -68,16 +68,16 @@ const ourBelovedFE = [
         position:'FE Engineer',
         desc:'코린이입니다! ٩(๑❛ᴗ❛๑)۶',
         url:[
+            'https://github.com/SynthiaLee',
             'https://www.instagram.com/synthia_lee_/',
-            'https://github.com/SynthiaLee'
         ]
     },{
         name:'장명지',
         position:'FE Engineer',
         desc:'🐶발도 좋아하고 개발도 좋아합니다.',
         url:[
+            'https://github.com/Dangpy',
             'https://www.instagram.com/_myundi/',
-            'https://github.com/Dangpy'
         ]
     }
 ];
@@ -87,9 +87,9 @@ const ourBelovedServer = [
         position:'Server Engineer',
         desc:'안녕하세요!! 하고 싶은건 일단 하고 보는 "프로 머박러"(머리박는, 대박 아닙니다,)백엔드 개발자 정동규 입니다.',
         url:[
-            'https://www.instagram.com/dev_gyu_99/',
             'https://github.com/yummygyudon',
-            'https://www.linkedin.com/in/%EB%8F%99%EA%B7%9C-%EC%A0%95-8a6b25226/'
+            'https://www.linkedin.com/in/%EB%8F%99%EA%B7%9C-%EC%A0%95-8a6b25226/',
+            'https://www.instagram.com/dev_gyu_99/',
         ]
     },{
         name:'장유진',
@@ -174,11 +174,11 @@ const Team =()=>{
                 font-weight:normal;
             }
         }
+        // & > div:nth-of-type(2){
+        //     margin-top:12px;
+        //     font-size:14px;
+        // }
         & > div:nth-of-type(3){
-            margin-top:12px;
-            font-size:14px;
-        }
-        & > div:nth-of-type(4){
             margin-top:30px;
             display:flex;
             gap:12px;
@@ -240,8 +240,8 @@ const Team =()=>{
                             return(
                                 <div css={profile_wrapper} key={i}>
                                     <div css={css`background-image:url('/images/profiles/${e.name}.jpg')`}/>
-                                    <div>{e.name} <span>{e.position}</span></div>
-                                    <div>{e.desc}</div>
+                                    <div>{e.name}<br/><span>{e.position}</span></div>
+                                    {/* <div>{e.desc}</div> */}
                                     <div>
                                         {
                                             e.url.map((e,i)=>{
