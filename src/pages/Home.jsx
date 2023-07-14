@@ -199,9 +199,7 @@ const Home=()=>{
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" css={css`display:flex;flex-direction:column;align-items:center;`}>
                     <img src="/images/landing-main-image.png" alt="example landing main" css={example_image}/>
                     <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
-                        <button css={main_button}>
-                            팀 블로그 만들기
-                        </button>
+                        <button css={main_button}>온보딩 예약하기</button>
                     </a>
                 </div>
                 <div css={css`margin-top:220px;`}>
@@ -261,9 +259,7 @@ const Home=()=>{
                 <div css={css`margin-top:280px;@media (max-width:575px){margin-top:180px;}`} data-aos="fade-up">
                     <h1 css={[title,css`font-size:64px;`]}>이제, 우리 팀 이야기를 세상에 알려보세요.</h1>
                     <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
-                        <button css={main_button}>
-                            팀 블로그 만들기
-                        </button>
+                        <button css={main_button}>온보딩 예약하기</button>
                     </a>
                 </div>
             </main>

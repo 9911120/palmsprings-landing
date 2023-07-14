@@ -73,7 +73,7 @@ const Header =()=>{
     }
 
     return(
-        <header css={header(position)} data-aos={location.pathname!=='/team'&&'fade'} data-aos-duration="800" data-aos-delay="2000">
+        <header css={header(position)} data-aos={location.pathname!=='/team'&&'fade'} data-aos-duration="800" data-aos-delay="2000" data-aos-once="true">
             <div css={header_inside}>
                 <Link to="/">
                     <div css={logo}>
@@ -83,9 +83,7 @@ const Header =()=>{
                 <div css={css`display:flex;gap:12px;align-items:center;@media(max-width:1200px){display:block;}`}>
                     <Link to="/team" css={[header_button,css`background:transparent;color:var(--gray100);&:hover{background:rgba(0,0,0,0.05);color:var(--green100)};@media(max-width:1200px){display:block;}`]}>팜스프링팀</Link>
                     <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
-                        <button css={header_button}>
-                            팀 블로그 만들기
-                        </button>
+                        <button css={header_button}>온보딩 예약하기</button>
                     </a>
                 </div>
             </div>
