@@ -17,7 +17,7 @@ const ourBelovedPM = [
         ]
     },{
         name:'양정윤',
-        position:'Project Manager',
+        position:'Product Manager',
         desc:'알은 새의 세계이다. 누구든지 태어나려고 하는 자는 하나의 세계를 파괴해야 한다.',
         url:[
             'https://instagram.com/zzang_yoon'
@@ -61,7 +61,8 @@ const ourBelovedFE = [
         position:'FE Engineer',
         desc:'개발자 꿈나무입니다! 제가 궁금하시다면 깃헙을 봐주세요.',
         url:[
-            'https://github.com/Geun-Oh'
+            'https://github.com/Geun-Oh',
+            'https://patch-strand-bb8.notion.site/F-E-Developer-7d29ae91483c4c4392d7efd31984550c?pvs=4'
         ]
     },{
         name:'이시연',
