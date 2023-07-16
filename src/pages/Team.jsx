@@ -27,21 +27,21 @@ const ourBelovedPM = [
 const ourBelovedDesigner = [
     {
         name:'권윤',
-        position:'Designer',
+        position:'UX/UI Designer',
         desc:'Product Designer @Palmspring',
         url:[
             'https://doongzi.kr/yoon'
         ]
     },{
         name:'김성은',
-        position:'Designer',
+        position:'UX/UI Designer',
         desc:'디자이너입니다.',
         url:[
             "https://instagram.com/sungeunarchive_"
         ]
     },{
         name:'송승훈',
-        position:'Designer',
+        position:'UX/UI Designer',
         desc:'기술과 디자인의 조화로 윤택한 삶을 만들고 싶습니다.',
         url:[
             'https://big-camel-a35.notion.site/Leo-Song-2023-29feffece20f4d1592b6630070c4adee?pvs=4'
