@@ -195,7 +195,7 @@ const Home=()=>{
             <Header/>
             <main css={main}>
                 <h3 data-aos="fade-up" data-aos-duration="800" css={subtitle}>성장하는 조직을 위한 팀 블로그 빌더</h3>
-                <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" css={title}>우리 팀 이야기를<br/>세상에 전달하는 방법</h1>
+                <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="600" css={title}>우리 팀 이야기를<br/>세상에 전하는 방법</h1>
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="1200" css={css`display:flex;flex-direction:column;align-items:center;`}>
                     <img src="/images/landing-main-image.png" alt="example landing main" css={example_image}/>
                     <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
