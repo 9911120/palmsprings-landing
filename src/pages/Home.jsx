@@ -164,7 +164,7 @@ const why_they_use_container = css`
     justify-content:center;
     gap:32px;
     &>div{
-        width:440px;
+        width:400px;
         border-radius:24px;
         box-shadow:0 0 16px 0 rgba(0,0,0,0.08);
         padding:76px 0;
@@ -217,14 +217,19 @@ const Home=()=>{
                     </div>
                     <div css={why_they_use_container} data-aos="fade-up">
                         <div css={css`transition: all 0.1s linear;background:#FFF;cursor:default;&:hover{transform:scale(1.05);&>div:nth-of-type(2){color:var(--green100);}&>div:nth-of-type(3){color:#000;}}`}>
-                            <div css={css`color:#868E96;font-size:44px;font-weight:700;`}>Acquisition</div>
+                            <div css={css`color:#868E96;font-size:44px;font-weight:700;`}>방문자 수</div>
                             <div css={css`margin-top:16px;font-size:92px;font-weight:700;transition: all 0.1s linear;`}>+55%</div>
-                            <div css={css`margin-top:24px;line-height:160%;color:#ADB5BD;transition: all 0.1s linear;`}>블로그를 운영하는 기업은 그렇지 않은 기업 대비<br/>평균적으로 웹사이트 방문자가 55% 더 많습니다.</div>
+                            <div css={css`margin-top:24px;line-height:160%;color:#ADB5BD;transition: all 0.1s linear;`}>블로그를 운영하는 기업은 그렇지 않은 기업 대비<br/>웹사이트 방문자가 55% 더 많습니다.</div>
                         </div>
                         <div css={css`transition: all 0.1s linear;background:#FFF;cursor:default;&:hover{transform:scale(1.05);&>div:nth-of-type(2){color:var(--green100);}&>div:nth-of-type(3){color:#000;}}`}>
-                            <div css={css`color:#868E96;font-size:44px;font-weight:700;`}>Customer</div>
+                            <div css={css`color:#868E96;font-size:44px;font-weight:700;`}>트래픽 확산</div>
+                            <div css={css`margin-top:16px;font-size:92px;font-weight:700;transition: all 0.1s linear;`}>+97%</div>
+                            <div css={css`margin-top:24px;line-height:160%;color:#ADB5BD;transition: all 0.1s linear;`}>블로그를 운영하는 기업은 그렇지 않은 기업 대비<br/>97% 더 많은 인바운드 링크를 획득합니다.</div>
+                        </div>
+                        <div css={css`transition: all 0.1s linear;background:#FFF;cursor:default;&:hover{transform:scale(1.05);&>div:nth-of-type(2){color:var(--green100);}&>div:nth-of-type(3){color:#000;}}`}>
+                            <div css={css`color:#868E96;font-size:44px;font-weight:700;`}>고객 유치</div>
                             <div css={css`margin-top:16px;font-size:92px;font-weight:700;transition: all 0.1s linear;`}>+67%</div>
-                            <div css={css`margin-top:24px;line-height:160%;color:#ADB5BD;transition: all 0.1s linear;`}>블로그를 운영하는 기업은 그렇지 않은 기업 대비<br/>평균적으로 67% 더 많은 잠재 고객을 유치합니다.</div>
+                            <div css={css`margin-top:24px;line-height:160%;color:#ADB5BD;transition: all 0.1s linear;`}>블로그를 운영하는 기업은 그렇지 않은 기업 대비<br/>67% 더 많은 잠재 고객(리드)을 유치합니다.</div>
                         </div>
                     </div>
                 </div>
