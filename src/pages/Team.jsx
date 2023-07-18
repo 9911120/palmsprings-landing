@@ -85,7 +85,7 @@ const ourBelovedFE = [
 const ourBelovedServer = [
     {
         name:'정동규',
-        position:'Server Engineer',
+        position:'BE Engineer',
         desc:'안녕하세요!! 하고 싶은건 일단 하고 보는 "프로 머박러"(머리박는, 대박 아닙니다,)백엔드 개발자 정동규 입니다.',
         url:[
             'https://github.com/yummygyudon',
@@ -94,7 +94,7 @@ const ourBelovedServer = [
         ]
     },{
         name:'장유진',
-        position:'Server Engineer',
+        position:'BE Engineer',
         desc:'성장중인 개발자입니다. 긴장해라 네카라쿠배. 그리고 저는.. 더보기',
         url:[
             'https://instagram.com/eu_jinchin'

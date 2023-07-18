@@ -17,7 +17,7 @@ const footer = css`
 const Footer=()=>{
     return(
         <footer css={footer}>
-            서울특별시 마포구 마포대로 122 프론트원 18층<br/><br/>
+            Made by Palmspring with ☕️ and 💕<br/><br/>
             <span css={css`font-weight:600;`}>© 팜스프링 Palmspring</span>
         </footer>
     );
