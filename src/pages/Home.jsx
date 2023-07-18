@@ -123,12 +123,14 @@ const link_wrapper = css`
     justify-content:center;
     gap:20px;
     &>a{
-        padding:10px 16px;
         font-size:24px;
-        border-radius:16px;
-        box-shadow:0 0 16px 0 rgba(0,0,0,0.08);
         opacity:0.5;
         transition: all 0.1s linear;
+        & > img {
+            width:100px;
+            box-shadow:0 0 16px 0 rgba(0,0,0,0.08);
+            border-radius:24px;
+        }
         &:hover{
             opacity:1;
         }
@@ -138,9 +140,12 @@ const link_wrapper = css`
         flex-wrap:wrap;
         gap:10px;
         &>a{
-            padding:10px 16px;
             font-size:18px;
-            border-radius:16px;
+            & > img {
+                width:76px;
+                box-shadow:0 0 16px 0 rgba(0,0,0,0.08);
+                border-radius:20px;
+            }    
         }
     }
 `;
@@ -205,15 +210,29 @@ const Home=()=>{
                 <div css={css`margin-top:220px;`}>
                     <div css={link_container} data-aos="fade-up">
                         <div css={link_wrapper}>
-                            <a href="https://naver.worksmobile.com/blog/" target="_blank" rel="noopener noreferrer" css={css`color:#008000;background:#EBF5EB;border:1px solid #BCDEBC;`}>네이버</a>
-                            <a href="https://blog.kakaopay.com/" target="_blank" rel="noopener noreferrer" css={css`color:#A8761A;background:#FFFBEB;border:1px solid #FFC700;`}>카카오</a>
-                            <a href="https://engineering.linecorp.com/ko/blog" target="_blank" rel="noopener noreferrer" css={css`color:#008000;background:#EBF5EB;border:1px solid #BCDEBC;`}>라인</a>
-                            <a href="https://about.daangn.com/blog/" target="_blank" rel="noopener noreferrer" css={css`color:#CD4A00;background:#FBEDE6;border:1px solid #EDBCA1;`}>당근마켓</a>
-                            <a href="https://story.baemin.com/" target="_blank" rel="noopener noreferrer" css={css`color:#007C6D;background:#E6F2F1;border:1px solid #8AC3BC;`}>배달의민족</a>
-                            <a href="https://toss.tech/" target="_blank" rel="noopener noreferrer" css={css`color:#0000A1;background:#E6E6F6;border:1px solid #B8B8E5;`}>토스</a>
-                            <a href="https://sendbird.com/ko/blog" target="_blank" rel="noopener noreferrer" css={css`color:#420084;background:#EDE6F3;border:1px solid #CBB8DD;`}>센드버드</a>
+                            <a href="https://naver.worksmobile.com/blog/" target="_blank" rel="noopener noreferrer">
+                                <img src="/images/startups/naver.png" alt="naver" />
+                            </a>
+                            <a href="https://blog.kakaopay.com/" target="_blank" rel="noopener noreferrer">
+                                <img src="/images/startups/kakao.png" alt="kakao" />
+                            </a>
+                            <a href="https://engineering.linecorp.com/ko/blog" target="_blank" rel="noopener noreferrer">
+                                <img src="/images/startups/line.png" alt="line" />
+                            </a>
+                            <a href="https://about.daangn.com/blog/" target="_blank" rel="noopener noreferrer">
+                                <img src="/images/startups/dang.png" alt="dang" />
+                            </a>
+                            <a href="https://story.baemin.com/" target="_blank" rel="noopener noreferrer">
+                                <img src="/images/startups/baemin.png" alt="baemin" />
+                            </a>
+                            <a href="https://toss.tech/" target="_blank" rel="noopener noreferrer">
+                                <img src="/images/startups/toss.png" alt="toss" />
+                            </a>
+                            <a href="https://sendbird.com/ko/blog" target="_blank" rel="noopener noreferrer">
+                                <img src="/images/startups/sendbird.png" alt="sendbird" />
+                            </a>
                         </div>
-                        <h1>요즘 잘 나가는 팀들이 자체 블로그를 쓰는 이유</h1>
+                        <h1>요즘 잘 나가는 팀들이 팀 블로그를 쓰는 이유</h1>
                     </div>
                     <div css={why_they_use_container} data-aos="fade-up">
                         <div css={css`transition: all 0.1s linear;background:#FFF;cursor:default;&:hover{transform:scale(1.05);&>div:nth-of-type(2){color:var(--green100);}&>div:nth-of-type(3){color:#000;}}`}>
@@ -257,12 +276,12 @@ const Home=()=>{
                 <div css={[feature_image_container,css`margin-top:140px;flex-direction:row-reverse;`]} data-aos="fade-up">
                     <div css={[css`background-image:url('/images/news-letter-graphic.png');`,feature_image]}></div>
                     <div>
-                        <div css={[css`width:520px;@media(max-width:575px){font-size:26px;}`,feature_title]}>자체 뉴스레터 관리 기능을 통해 가장 최신의 소식을 전해주세요.</div>
+                        <div css={[css`width:520px;@media(max-width:575px){font-size:26px;}`,feature_title]}>자체 뉴스레터 관리 기능을 통해 가장 최신의 소식을 전해보세요.</div>
                         {/* <div css={css`margin-top:20px;font-size:24px;`}></div> */}
                     </div>
                 </div>
                 <div css={css`margin-top:280px;@media (max-width:575px){margin-top:180px;}`} data-aos="fade-up">
-                    <h1 css={[title,css`font-size:64px;`]}>이제, 우리 팀 이야기를 세상에 알려보세요.</h1>
+                    <h1 css={[title,css`font-size:64px;`]}>이제, 우리 팀 이야기를 세상에 전하세요.</h1>
                     <a href="https://tally.so/r/npd4MJ" target="_blank" rel="noopener noreferrer">
                         <button css={main_button}>온보딩 예약하기</button>
                     </a>
